@@ -9,12 +9,33 @@
        <hr>
 
        <ul class="list-group">
-           <li class="list-group-item">Buscar Pais</li>
-           <li class="list-group-item">Por regiao</li> 
-           <li class="list-group-item">Por capital</li>
+           <li 
+              class="list-group-item" 
+              routerLink="" 
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+                 Buscar Pais
+            </li>
+
+           <li 
+              class="list-group-item" 
+              routerLink="regiao"
+              routerLinkActive="active"
+            >
+              Por regiao
+            </li> 
+
+           <li 
+              class="list-group-item" 
+              routerLink="capital"
+              routerLinkActive="active"
+            >
+             Por capital
+            </li>
        </ul>
    </div>
-   
+
 
    <div class="col">
       <router-outlet></router-outlet>
