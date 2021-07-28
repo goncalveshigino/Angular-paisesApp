@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { PaisServiceComponent } from './pais/services/pais-service/pais-service.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent,
+    PaisServiceComponent
   ],
   imports: [
     BrowserModule,
