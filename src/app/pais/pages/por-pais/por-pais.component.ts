@@ -35,7 +35,7 @@ export class PorPaisComponent  {
   }
   
 
-  sugerencia( termino: string ) {
+  sugerencias( termino: string ) {
     this.haErro = false;
     //TOD: criar sugerencias
   }
