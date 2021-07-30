@@ -30,10 +30,18 @@ export class PaisService {
   }
 
 
-   getPaisPorID(id: string): Observable<Country> {
+  getPaisPorID(id: string): Observable<Country> {
 
     const url = `${ this.apiURL }/alpha/${ id }`
     return this.http.get<Country>( url );
   }
+  
+
+  buscarRegiao(id: string): Observable<Country[]> {
+
+    const url = `${ this.apiURL }/region/${ id }`
+    return this.http.get<Country[]>( url );
+  }
+
 
 }
