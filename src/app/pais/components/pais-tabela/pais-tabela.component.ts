@@ -6,6 +6,8 @@ import { PaisService } from '../../services/pais.service';
   selector: 'app-pais-tabela',
   templateUrl: './pais-tabela.component.html',
   styles: [
+    `
+    `
   ]
 })
 export class PaisTabelaComponent  {
