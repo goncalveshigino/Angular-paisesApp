@@ -14,7 +14,7 @@ export class PaisService {
   private apiURL: string = 'https://restcountries.eu/rest/v2';
 
   get httpParams() {
-  return new HttpParams() .set('fields', 'name;capital;alpha2code;flag;population');
+  return new HttpParams() .set('fields','name;capital;alpha2Code;flag;population');
   }
 
   constructor(private http: HttpClient) { }
@@ -23,29 +23,28 @@ export class PaisService {
   buscarPais(termino: string): Observable<Country[]> {
       
     const url = `${this.apiURL}/name/${termino}`;
-    return this.http.get<Country[]>(url);
+  return this.http.get<Country[]>( url /* { params:  this.httpParams }*/ );
    
   }
 
   buscarCapital(termino: string): Observable<Country[]> {
 
     const url = `${ this.apiURL }/capital/${ termino }`
-    return this.http.get<Country[]>( url, { params: this.httpParams } );
+    return this.http.get<Country[]>( url /* { params:  this.httpParams }*/ );
   }
 
 
   getPaisPorID(id: string): Observable<Country> {
 
     const url = `${ this.apiURL }/alpha/${ id }`
-    return this.http.get<Country>( url, { params: this.httpParams });
+    return this.http.get<Country>( url );
   }
   
 
   buscarRegiao(regiao: string): Observable<Country[]> {
 
-
     const url = `${this.apiURL}/region/${regiao}`;
-    return this.http.get<Country[]>(url, { params:  this.httpParams } )
+    return this.http.get<Country[]>(url /* { params:  this.httpParams }*/ )
       .pipe(
       tap( console.log )
     )
